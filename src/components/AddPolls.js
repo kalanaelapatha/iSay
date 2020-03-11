@@ -41,13 +41,13 @@ return(
 <div style={{display:'flex',alignItems:'center', justifyContent:'center',margin:'0 24 0 24', marginTop:'15%'}} >
     
 <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
-<Form.Item name={['user', 'name']} label="Legistative Matter" rules={[{ required: true }]}>
+<Form.Item name='name' label="Legistative Matter" rules={[{ required: true }]}>
   <Input />
 </Form.Item>
-<Form.Item name={['user', 'email']} label="Description" rules={[{ type: 'email' }]}>
+<Form.Item name='description' label="Description" rules={[{ type: 'email',required: true }]}>
   <Input />
 </Form.Item>
-<Form.Item name={['user', 'age']} label="    " rules={[{ type: 'number', min: 0, max: 99 }]}>
+<Form.Item name={['user', 'age']} label="Choose" rules={[{ type: 'number', min: 0, max: 99 }]}>
 <div className="site-card-border-less-wrapper">
     <Card title="Target Audience" bordered={false} style={{ width: 300 }}>
       <p>Doctors</p>
@@ -56,6 +56,7 @@ return(
     </Card>
   </div>
 </Form.Item>
+
 <Form.Item name={['user', 'website']} label="Date">
 <RangePicker
       showTime={{ format: 'HH:mm' }}

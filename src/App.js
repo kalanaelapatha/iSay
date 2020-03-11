@@ -23,9 +23,9 @@ class App extends React.Component {
 
 
     render() {
-        const isLogged = false;
+        const isLogged = true;
         if (isLogged == true) {
-            return (<div style={{ backgroundColor: '#ffa000' }} >
+            return (<div style={{ backgroundColor: '#ffa000',height:1280 }} >
                 <Router>
                     <Route path="/Login" component={Login} />
                     <Route path="/register" component={Register} />

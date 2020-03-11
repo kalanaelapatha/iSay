@@ -1,6 +1,7 @@
 import React from'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 import 'antd/dist/antd.css';
+import { Card } from 'antd';
 
 
 
@@ -25,16 +26,16 @@ const Login = () => {
 
   return (
 
-  
 
-
-    <div style={{display:'flex',alignItems:'center', justifyContent:'center',margin:'0 24 0 24', marginTop:'25%'}}>
+    <div className="site-card-border-less-wrapper" style={{display:'flex',alignItems:'center', justifyContent:'center',margin:'0 24 0 24'}}>
+       <Card bordered={true} style={{ width: 600 ,marginTop:'20%' }}>
     <Form
       {...layout}
       name="basic"
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
+      style={{ width: 600 ,margin:'0 4rem 0 -5rem ' }}
     >
       <Form.Item
         label="Username"
@@ -70,6 +71,8 @@ const Login = () => {
         </Button>
       </Form.Item>
     </Form>
+
+    </Card>
 
     </div>
   );
