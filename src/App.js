@@ -23,11 +23,12 @@ class App extends React.Component {
 
 
     render() {
-        const isLogged = true;
+        const isLogged = false;
         if (isLogged !== true) {
-            return (<div style={{ backgroundColor: '#ffa000',height:1280 }} >
+            return (
+                <div style={{ backgroundColor: '#ffa000',height:1280 }} >
                 <Router>
-                    <Route path="/Login" exact component={Login} />
+                    <Route path="/" exact component={Login} />
                     <Route path="/register" component={Register} />
                 </Router>
             </div>)
