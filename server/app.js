@@ -1,7 +1,18 @@
 (
     function() {
+
         "use strict";
         const socketIOClient = require("socket.io-client");
+
+        var fs = require('fs');
+        var util = require('util');
+        var log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'w'});
+        var log_stdout = process.stdout;
+
+        console.log = function(d) { //
+            log_file.write(util.format(d) + '\n');
+            log_stdout.write(util.format(d) + '\n');
+        };
 
         /** express initialization */
 
@@ -26,6 +37,7 @@
 
         io.on('connection', function (socket) {
             console.log("Connected Socket = " + socket.id);
+            UserStore.add(socket.id)
 
             socket.on('disconnect', function(){
                 console.log("Disconnected Socket = " + socket.id);
@@ -37,6 +49,10 @@
 
             });
 
+            socket.on('login_request', function (data) {
+                console.log("Login Object" + data)
+
+            });
 
 
 
