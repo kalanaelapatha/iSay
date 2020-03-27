@@ -22,7 +22,6 @@ export default class SignInComponent extends React.Component{
     onFinish(e) {
         login(e)
         console.log(e);
-
         console.log('Success:');
     }
 

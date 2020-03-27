@@ -11,3 +11,29 @@
     float: left;
   }
 
+.locations-dropdown{
+    /*  float: left;*/
+}
+
+.map{
+    position: relative;
+    top: 15px;
+}
+.active-path{
+    fill: #C35989!important;
+}
+
+.map-region:hover{
+    fill: #bbde18;
+    cursor: pointer;
+}
+
+.map-region{
+    fill: #B9CFDE;
+    cursor: pointer;
+}
+
+.location-search{
+    height: auto;
+}
+

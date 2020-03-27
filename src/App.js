@@ -13,6 +13,8 @@ import Login from './components/Login';
 import Register from './components/Register';
 import AddPolls from './components/AddPolls';
 import AvailablePolls from './components/AvailablePolls';
+import Dashboard from "./components/dashboard";
+
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -23,7 +25,7 @@ class App extends React.Component {
 
 
     render() {
-        const isLogged = false;
+        const isLogged = true;
         if (isLogged !== true) {
             return (
                 <div style={{ backgroundColor: '#ffa000',height:1280 }} >
@@ -98,7 +100,7 @@ class App extends React.Component {
                                             minHeight: 800,
                                         }}
                                     >
-                                        <Route path="/addPolls" component={AddPolls} />
+                                        <Route path="/addPolls" component={Dashboard} />
                                         <Route path="/allpolls" component={AvailablePolls} />
 
                                     </Content>

@@ -1,29 +1,4 @@
 Listening on port 3100
 [HMR] Waiting for update signal from WDS...
 http://localhost:3100
-Connected Socket = b-GRQN95rxljub__AAAA
-Server node id122222
-{
-  username: 'adsa',
-  password: 'adsasda',
-  nic: 'adsadsa',
-  remember: true
-}
-Success:
-Login Object[object Object]
-{
-  username: 'adsa',
-  password: 'adsasda',
-  nic: 'adsadsa',
-  remember: true
-}
-Success:
-Login Object[object Object]
-{
-  username: 'deshan',
-  password: '123',
-  nic: '950620552V',
-  remember: true
-}
-Success:
-Login Object[object Object]
+Connected Socket = vkR45a4azcJqD1pdAAAA
