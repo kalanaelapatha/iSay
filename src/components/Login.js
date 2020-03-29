@@ -1,9 +1,9 @@
 import React from'react';
+// import { Redirect } from "react-router-dom";
+import { Route, Redirect } from 'react-router'
 import { Form, Input, Button, Checkbox } from 'antd';
-import 'antd/dist/antd.css';
 import { Card } from 'antd';
-
-
+import axios from 'axios';
 
 
 const layout = {
@@ -15,14 +15,38 @@ const tailLayout = {
 };
 
 
-const Login = () => {
-  const onFinish = values => {
-    console.log('Success:', values);
-  };
+const Login  = ({config,onClick}) => {
 
+
+  const onFinish = values => {
+
+     let userName=values.username;
+     let password=values.password;
+     let nic= values.nic;
+
+
+
+    axios.post('http://localhost:4000/iSay_api/login',{
+      userName: userName,
+      password: password,
+      nic:nic
+
+
+    })
+        .then(function (response) {
+          console.log('Responce is:'+ response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+
+  };
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
   };
+
+
 
   return (
 
@@ -63,12 +87,18 @@ const Login = () => {
 
       <Form.Item {...tailLayout} name="remember" valuePropName="checked">
         <Checkbox>Remember me</Checkbox>
+
       </Form.Item>
 
       <Form.Item {...tailLayout}>
-        <Button type="primary" htmlType="submit">
-          Submit
+        <Button type="primary" htmlType="submit"
+                onClick={onClick}
+        >Sign In
         </Button>
+
+
+
+
       </Form.Item>
     </Form>
 
